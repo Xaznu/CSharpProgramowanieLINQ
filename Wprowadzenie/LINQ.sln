@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wyświetlanie katalagów", "Wyświetlanie katalagów\Wyświetlanie katalagów.csproj", "{F732494C-71AF-488D-A738-57EFF22E9DCF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. Wprowadzenie", "Wyświetlanie katalagów\1. Wprowadzenie.csproj", "{F732494C-71AF-488D-A738-57EFF22E9DCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Funkcje", "Funkcje\2. Funkcje.csproj", "{B896F64F-593D-453B-98D8-20BAEE91F83E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F732494C-71AF-488D-A738-57EFF22E9DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F732494C-71AF-488D-A738-57EFF22E9DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F732494C-71AF-488D-A738-57EFF22E9DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B896F64F-593D-453B-98D8-20BAEE91F83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B896F64F-593D-453B-98D8-20BAEE91F83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B896F64F-593D-453B-98D8-20BAEE91F83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B896F64F-593D-453B-98D8-20BAEE91F83E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
