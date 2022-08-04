@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Globalization;
 
 namespace Samochody
 {
@@ -9,38 +10,51 @@ namespace Samochody
     {
         static void Main(string[] args)
         {
-            var samochody = WczytywaniePliku("paliwo.csv");
+            var samochody = WczytywanieSamochodu("paliwo.csv");
+            var producenci = WczytywanieProducenci("producent.csv");
 
             var zapytanie = from samochod in samochody
-                            where samochod.Producent == "Audi" && samochod.Rok == 2018
+                            join producent in producenci on samochod.Producent equals producent.Nazwa
                             orderby samochod.SpalanieAutostrada descending, samochod.Producent ascending
                             select new
                             {
+                                producent.Siedziba,
                                 samochod.Producent,
                                 samochod.Model,
                                 samochod.SpalanieAutostrada
                             };
 
-            var zapytanie2 = samochody.SelectMany(s => s.Producent).OrderBy(s => s);
-
-
-            foreach (var litera in zapytanie2)
+            foreach (var samochod in zapytanie.Take(10))
             {
-                Console.WriteLine(litera);
+                Console.WriteLine(samochod.Siedziba + " " + samochod.Producent + " " + samochod.Model + " : " + samochod.SpalanieAutostrada);
             }
-
-            //foreach (var samochod in zapytanie.Take(10))
-            //{
-            //    Console.WriteLine(samochod.Producent + " " + samochod.Model + " : " + samochod.SpalanieAutostrada);
-            //}
         }
 
-        private static List<Samochod> WczytywaniePliku(string sciezka)
+        private static List<Samochod> WczytywanieSamochodu(string sciezka)
         {
             var zapytanie = File.ReadAllLines(sciezka)
                                 .Skip(1)
                                 .Where(l => l.Length > 1)
                                 .WSamochod();
+
+            return zapytanie.ToList();
+        }
+
+
+        private static List<Producent> WczytywanieProducenci(string sciezka)
+        {
+            var zapytanie = File.ReadAllLines(sciezka)
+                                .Where(l => l.Length > 1)
+                                .Select(l =>
+                                {
+                                    var kolumny = l.Split(',');
+                                    return new Producent
+                                    {
+                                        Nazwa = kolumny[0],
+                                        Siedziba = kolumny[1],
+                                        Rok = int.Parse(kolumny[2])
+                                    };
+                                });
 
             return zapytanie.ToList();
         }
@@ -59,7 +73,7 @@ namespace Samochody
                     Rok = int.Parse(kolumny[0]),
                     Producent = kolumny[1],
                     Model = kolumny[2],
-                    Pojemnosc = double.Parse(kolumny[3]),
+                    Pojemnosc = double.Parse(kolumny[3], CultureInfo.InvariantCulture),
                     IloscCylindrow = int.Parse(kolumny[4]),
                     SpalanieMiasto = int.Parse(kolumny[5]),
                     SpalanieAutostrada = int.Parse(kolumny[6]),

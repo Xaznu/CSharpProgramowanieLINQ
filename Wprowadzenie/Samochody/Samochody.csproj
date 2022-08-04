@@ -8,9 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Update="paliwo.csv">
+    <None Remove="paliwo.csv" />
+    <None Remove="producent.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="paliwo.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </EmbeddedResource>
+    <EmbeddedResource Include="producent.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

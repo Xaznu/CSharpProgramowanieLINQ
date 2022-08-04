@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. Funkcje", "Funkcje\2. Fu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "3. Zapytania", "3. Zapytania\3. Zapytania.csproj", "{BFDC801C-BAFB-4AA8-B19D-6A74CD24E43E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samochody", "Samochody\Samochody.csproj", "{36C9C79F-7781-409C-A273-5E620C3740DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samochody", "Samochody\Samochody.csproj", "{3D7CE149-F0F1-466F-B478-EE93E0211B29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{BFDC801C-BAFB-4AA8-B19D-6A74CD24E43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFDC801C-BAFB-4AA8-B19D-6A74CD24E43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFDC801C-BAFB-4AA8-B19D-6A74CD24E43E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{36C9C79F-7781-409C-A273-5E620C3740DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{36C9C79F-7781-409C-A273-5E620C3740DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{36C9C79F-7781-409C-A273-5E620C3740DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{36C9C79F-7781-409C-A273-5E620C3740DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7CE149-F0F1-466F-B478-EE93E0211B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7CE149-F0F1-466F-B478-EE93E0211B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7CE149-F0F1-466F-B478-EE93E0211B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7CE149-F0F1-466F-B478-EE93E0211B29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
