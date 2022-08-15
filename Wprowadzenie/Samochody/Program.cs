@@ -21,6 +21,7 @@ namespace Samochody
         {
             var samochody = WczytywanieSamochodu("paliwo.csv");
             var db = new SamochodDB();
+            db.Database.Log = Console.WriteLine;
 
             if (!db.Samochody.Any())
             {
@@ -34,6 +35,20 @@ namespace Samochody
 
         private static void ZapytanieDane()
         {
+            var db = new SamochodDB();
+            db.Database.Log = Console.WriteLine;
+
+            var zapytanie = from samochod in db.Samochody
+                            orderby samochod.SpalanieAutostrada descending, samochod.Model ascending
+                            select samochod;
+
+            var zapytanie2 = db.Samochody.Where(s => s.Producent == "Audi")
+                                    .OrderByDescending(s => s.SpalanieAutostrada).ThenBy(s => s.Model).Take(10);
+
+            foreach (var samochod in zapytanie2)
+            {
+                Console.WriteLine($"{samochod.Model} : {samochod.SpalanieAutostrada}");
+            }
 
         }
 
